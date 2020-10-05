@@ -10,6 +10,10 @@ class Bank {
 
   deposit(amount) {
     this.account += amount
-  }
+  };
+
+  withdraw(amount) {
+    this.account -= amount
+  };
 
 };
