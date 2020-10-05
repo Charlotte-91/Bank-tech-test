@@ -16,4 +16,8 @@ class Bank {
     this.account -= amount
   };
 
+  statement() {
+    return 'date || credit/debit || balance'
+  };
+  
 };
