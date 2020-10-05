@@ -1,8 +1,11 @@
 describe("Bank", function() {
 
 
-  it("Should return a balance", function() {
+  beforeEach(function() {
+     bank = new Bank();
+  });
 
-    expect(bank.balance).toEqual(1000);
+  it("Should return a balance", function() {
+    expect(bank.balance()).toEqual(1000);
   });
 });
