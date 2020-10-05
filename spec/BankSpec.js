@@ -28,7 +28,7 @@ describe("Bank", function() {
 
   it("Deposit method should push string into statement instance variable", function() {
     bank.deposit(200)
-    expect(bank.myStatement).toEqual('05/10/2020 || 200 || || 200')
+    expect(bank.myStatement).toEqual([`${new Date(Date.now()).toLocaleString().split(',')[0]} || 200 || || 200`])
   });
 
 });
