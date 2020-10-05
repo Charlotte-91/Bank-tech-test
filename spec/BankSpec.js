@@ -28,7 +28,12 @@ describe("Bank", function() {
 
   it("Deposit method should push string into statement instance variable", function() {
     bank.deposit(200)
-    expect(bank.myStatement).toEqual([`${new Date(Date.now()).toLocaleString().split(',')[0]} || 200 || || 200`])
+    expect(bank.myStatement).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 200 || || 200`)
   });
 
+  it("Withdraw method should push string into statement instance variable", function() {
+    bank.deposit(200)
+    bank.withdraw(50)
+    expect(bank.myStatement).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || || 50 || 150`)
+  });
 });
