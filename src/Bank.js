@@ -17,7 +17,7 @@ class Bank {
   };
 
   statement() {
-    return 'date || credit/debit || balance'
+    return 'date || credit || debit || balance'
   };
-  
+
 };

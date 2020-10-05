@@ -23,7 +23,12 @@ describe("Bank", function() {
   });
 
   it("Should return a statement with the headings, 'date', 'credit/debit' and 'balance' ", function() {
-    expect(bank.statement()).toContain('date || credit/debit || balance');
+    expect(bank.statement()).toContain('date || credit || debit || balance');
   });
-  
+
+  it("Deposit method should push string into statement instance variable", function() {
+    bank.deposit(200)
+    expect(bank.myStatement).toEqual('05/10/2020 || 200 || || 200')
+  });
+
 });
