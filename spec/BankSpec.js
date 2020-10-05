@@ -36,4 +36,13 @@ describe("Bank", function() {
     bank.withdraw(50)
     expect(bank.myStatement).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || || 50 || 150`)
   });
+
+  it("Prints a statement with a list of transactions and a header", function() {
+    bank.deposit(400)
+    bank.withdraw(24)
+    bank.deposit(50)
+    expect(bank.statement()).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 400 || || 400`)
+    expect(bank.statement()).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || || 24 || 376`)
+    expect(bank.statement()).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 50 || || 426`)
+  });
 });
