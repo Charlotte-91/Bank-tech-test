@@ -37,12 +37,17 @@ describe("Bank", function() {
     expect(bank.myStatement).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || || 50 || 150`)
   });
 
-  it("Prints a statement with a list of transactions and a header", function() {
+  it("My statement array contains a list of transactions", function() {
     bank.deposit(400)
     bank.withdraw(24)
     bank.deposit(50)
-    expect(bank.statement()).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 400 || || 400`)
-    expect(bank.statement()).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || || 24 || 376`)
-    expect(bank.statement()).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 50 || || 426`)
+    expect(bank.myStatement).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 400 || || 400`)
+    expect(bank.myStatement).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || || 24 || 376`)
+    expect(bank.myStatement).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 50 || || 426`)
   });
+
+  it("Prints a statement list with a header to the terminal", function() {
+
+  });
+
 });

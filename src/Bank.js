@@ -20,7 +20,8 @@ class Bank {
   };
 
   statement() {
-    return 'date || credit || debit || balance'
+    console.log("date || credit || debit || balance");
+    this.myStatement.forEach(line => { console.log(line); });
   };
-
+    
 };
