@@ -48,8 +48,8 @@ describe("Account", function() {
   });
 
   it("Takes in two arguments and pushes them into an array in string format ", function(){
-  account.deposit(70)
-  expect(account.myStatement).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 70.00 || || 70.00`)
+    account.deposit(70)
+    expect(account.myStatement).toContain(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 70.00 || || 70.00`)
   });
 
 });
