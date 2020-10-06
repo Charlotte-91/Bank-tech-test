@@ -46,3 +46,58 @@ As a user,
 So that I know when I have deposited or withdrawn from my account,
 I want there to be dates for each transaction listed on my statement.
 ```
+
+## My code
+
+I wanted my code to be simple to use and easy to read. 
+
+Therefore my code consists of 1 class with 4 methods, each of them no longer than 2 lines. 
+
+I believe that my code is dry and runs well.
+
+I struggled with mocking in Jasmine, but I managed to get it working and I'm proud of that fact.
+
+I did however have trouble with installing a test coverage tool.
+
+I am still looking into how to do that in Javascript, hopefully that will be the next thing I add to this project. 
+
+## Installation
+### ESlint
+To install ESlint:
+```
+npm install
+```
+To run ESlint:
+```
+npx eslint ./src/Bank.js
+```
+### Jasmine
+
+- To run Jasmine please run SpecRunner.html in a live server or similar
+
+
+
+## Use Bank App
+
+- Please run the code in a JavaScript console
+
+To start a new account run:
+```
+accountName = new Account
+```
+To deposit money into your account:
+```
+accountName.deposit(amount)
+```
+To withdraw money from your account:
+```
+accountName.withdraw(amount)
+```
+To check a statement of your account:
+```
+accountName.statement()
+```
+## Screenshot example
+
+![Bank app screenshot](./img/bankapp.png)
+
