@@ -19,5 +19,9 @@ class Account {
     console.log("date || credit || debit || balance");
     this.myStatement.forEach(line => { console.log(line); });
   }
+
+  transaction(credit, debit) {
+    this.myStatement.push(`${new Date(Date.now()).toLocaleString().split(',')[0]} || ${credit.toFixed(2)} || ${debit.toFixed(2)} || ${this.account.toFixed(2)}`)
+  }
     
 }
