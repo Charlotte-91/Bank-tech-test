@@ -1,9 +1,13 @@
 describe("Bank", function() {
 
-
   beforeEach(function() {
      bank = new Bank();
   });
+
+  var consoleLogTest = function () {
+    var userStatement = bank.statement();
+    return userStatement;
+  };
 
   it("Should return a balance", function() {
     bank.deposit(1000)
@@ -23,7 +27,9 @@ describe("Bank", function() {
   });
 
   it("Should return a statement with the headings, 'date', 'credit/debit' and 'balance' ", function() {
-    expect(bank.statement()).toContain('date || credit || debit || balance');
+    console.log = jasmine.createSpy("log");
+    consoleLogTest();
+    expect(console.log).toHaveBeenCalledWith("date || credit || debit || balance");
   });
 
   it("Deposit method should push string into statement instance variable", function() {
@@ -47,7 +53,15 @@ describe("Bank", function() {
   });
 
   it("Prints a statement list with a header to the terminal", function() {
-
+    bank.deposit(400)
+    bank.withdraw(24)
+    bank.deposit(50)
+    console.log = jasmine.createSpy("log");
+    consoleLogTest();
+    expect(console.log).toHaveBeenCalledWith(`date || credit || debit || balance`);
+    expect(console.log).toHaveBeenCalledWith(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 400 || || 400`);
+    expect(console.log).toHaveBeenCalledWith(`${new Date(Date.now()).toLocaleString().split(',')[0]} || || 24 || 376`);
+    expect(console.log).toHaveBeenCalledWith(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 50 || || 426`);
   });
 
 });
