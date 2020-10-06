@@ -7,12 +7,12 @@ class Account {
 
   deposit(amount) {
     this.account += amount
-    this.myStatement.push(`${new Date(Date.now()).toLocaleString().split(',')[0]} || ${amount.toFixed(2)} || || ${this.account.toFixed(2)}`)
+    this.transaction(` ${amount.toFixed(2)} `, " ")
   }
 
   withdraw(amount) {
     this.account -= amount
-    this.myStatement.push(`${new Date(Date.now()).toLocaleString().split(',')[0]} || || ${amount.toFixed(2)} || ${this.account.toFixed(2)}`)
+    this.transaction(" ", ` ${amount.toFixed(2)} `)
   }
 
   statement() {
@@ -21,7 +21,7 @@ class Account {
   }
 
   transaction(credit, debit) {
-    this.myStatement.push(`${new Date(Date.now()).toLocaleString().split(',')[0]} || ${credit.toFixed(2)} || ${debit.toFixed(2)} || ${this.account.toFixed(2)}`)
+    this.myStatement.push(`${new Date(Date.now()).toLocaleString().split(',')[0]} ||${credit}||${debit}|| ${this.account.toFixed(2)}`)
   }
     
 }
