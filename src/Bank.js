@@ -7,18 +7,12 @@ class Account {
 
   deposit(amount) {
     this.account += amount
-    this.transaction(
-` ${amount.toFixed(2)} `,
-" "
-)
+    this.transaction(` ${amount.toFixed(2)} `, " ")
   }
 
   withdraw(amount) {
     this.account -= amount
-    this.transaction(
-" ",
-` ${amount.toFixed(2)} `
-)
+    this.transaction(" ", ` ${amount.toFixed(2)} `)
   }
 
   statement() {
