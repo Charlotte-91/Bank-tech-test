@@ -1,4 +1,4 @@
-class Bank {
+class Account {
 
   constructor() {
     this.account = 0
