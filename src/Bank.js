@@ -7,12 +7,12 @@ class Account {
 
   deposit(amount) {
     this.account += amount
-    this.myStatement.push(`${new Date(Date.now()).toLocaleString().split(',')[0]} || ${amount} || || ${this.account}`)
+    this.myStatement.push(`${new Date(Date.now()).toLocaleString().split(',')[0]} || ${amount.toFixed(2)} || || ${this.account.toFixed(2)}`)
   }
 
   withdraw(amount) {
     this.account -= amount
-    this.myStatement.push(`${new Date(Date.now()).toLocaleString().split(',')[0]} || || ${amount} || ${this.account}`)
+    this.myStatement.push(`${new Date(Date.now()).toLocaleString().split(',')[0]} || || ${amount.toFixed(2)} || ${this.account.toFixed(2)}`)
   }
 
   statement() {
