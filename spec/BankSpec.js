@@ -9,23 +9,6 @@ describe("Account", function() {
     return userStatement;
   };
 
-  it("Should return a balance", function() {
-    account.deposit(1000)
-    expect(account.balance()).toEqual(1000);
-  
-  });
-
-  it("Should deposit 90 into an empty account, therefore returning a balance of 90", function() {
-    account.deposit(90)
-    expect(account.balance()).toEqual(90);
-  });
-
-  it("Should withdraw 100 from a balance of 1000, therefore returning a balance of 900", function() {
-    account.deposit(1000)
-    account.withdraw(100)
-    expect(account.balance()).toEqual(900);
-  });
-
   it("Should return a statement with the headings, 'date', 'credit/debit' and 'balance' ", function() {
     console.log = jasmine.createSpy("log");
     consoleLogTest();
@@ -55,7 +38,7 @@ describe("Account", function() {
   it("Prints a statement list with a header to the terminal", function() {
     account.deposit(400)
     account.withdraw(24)
-    account.deposit(50)
+    bank.deposit(50)
     console.log = jasmine.createSpy("log");
     consoleLogTest();
     expect(console.log).toHaveBeenCalledWith(`date || credit || debit || balance`);
