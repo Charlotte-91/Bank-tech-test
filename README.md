@@ -73,9 +73,8 @@ npx eslint ./src/Bank.js
 ```
 ### Jasmine
 
+- Install Jasmine standalone
 - To run Jasmine please run SpecRunner.html in a live server or similar
-
-
 
 ## Use Bank App
 

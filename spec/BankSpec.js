@@ -1,17 +1,15 @@
 describe("Account", function() {
 
+  var Account = require('../src/Bank');
+  var account;
+
   beforeEach(function() {
      account = new Account();
   });
 
-  var consoleLogTest = function () {
-    var userStatement = account.statement();
-    return userStatement;
-  };
-
   it("Should return a statement with the headings, 'date', 'credit/debit' and 'balance' ", function() {
     console.log = jasmine.createSpy("log");
-    consoleLogTest();
+    account.statement();
     expect(console.log).toHaveBeenCalledWith("date || credit || debit || balance");
   });
 
@@ -40,7 +38,7 @@ describe("Account", function() {
     account.withdraw(24)
     account.deposit(50)
     console.log = jasmine.createSpy("log");
-    consoleLogTest();
+    account.statement();
     expect(console.log).toHaveBeenCalledWith(`date || credit || debit || balance`);
     expect(console.log).toHaveBeenCalledWith(`${new Date(Date.now()).toLocaleString().split(',')[0]} || 400.00 || || 400.00`);
     expect(console.log).toHaveBeenCalledWith(`${new Date(Date.now()).toLocaleString().split(',')[0]} || || 24.00 || 376.00`);

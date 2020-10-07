@@ -7,12 +7,12 @@ class Account {
 
   deposit(amount) {
     this.account += amount
-    this.transaction(` ${amount.toFixed(2)} `, " ")
+    this.addTransaction(` ${amount.toFixed(2)} `, " ")
   }
 
   withdraw(amount) {
     this.account -= amount
-    this.transaction(" ", ` ${amount.toFixed(2)} `)
+    this.addTransaction(" ", ` ${amount.toFixed(2)} `)
   }
 
   statement() {
@@ -20,8 +20,9 @@ class Account {
     this.myStatement.forEach(line => { console.log(line); });
   }
 
-  transaction(credit, debit) {
+  addTransaction(credit, debit) {
     this.myStatement.push(`${new Date(Date.now()).toLocaleString().split(',')[0]} ||${credit}||${debit}|| ${this.account.toFixed(2)}`)
   }
     
 }
+module.exports = Account;

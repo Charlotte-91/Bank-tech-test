@@ -7,12 +7,16 @@
     "lib": "lib",
     "test": "test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jasmine": "^3.6.1",
+    "npm": "^6.14.8"
+  },
   "devDependencies": {
-    "eslint": "^7.10.0"
+    "eslint": "^7.10.0",
+    "nyc": "^15.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc jasmine"
   },
   "repository": {
     "type": "git",
@@ -23,5 +27,6 @@
   "bugs": {
     "url": "https://github.com/Charlotte-91/Bank-tech-test/issues"
   },
-  "homepage": "https://github.com/Charlotte-91/Bank-tech-test#readme"
+  "homepage": "https://github.com/Charlotte-91/Bank-tech-test#readme",
+  "keywords": []
 }
