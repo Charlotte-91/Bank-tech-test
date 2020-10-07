@@ -17,7 +17,7 @@ class Account {
 
   statement() {
     console.log("date || credit || debit || balance");
-    this.myStatement.forEach(line => { console.log(line); });
+    this.myStatement.slice().reverse().forEach(line => { console.log(line); });
   }
 
   addTransaction(credit, debit) {

@@ -62,19 +62,21 @@ I did however have trouble with installing a test coverage tool.
 I am still looking into how to do that in Javascript, hopefully that will be the next thing I add to this project. 
 
 ## Installation
-### ESlint
-To install ESlint:
+
+To install the project:
 ```
 npm install
 ```
+### ESlint
 To run ESlint:
 ```
 npx eslint ./src/Bank.js
 ```
-### Jasmine
-
-- Install Jasmine standalone
-- To run Jasmine please run SpecRunner.html in a live server or similar
+### Run Tests
+To run nyc Jasmine:
+```
+npm test
+```
 
 ## Use Bank App
 
