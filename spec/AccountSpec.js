@@ -1,6 +1,6 @@
 describe("Account", function() {
 
-  var Account = require('../src/Bank');
+  var Account = require('../src/Account');
   var account;
 
   beforeEach(function() {
