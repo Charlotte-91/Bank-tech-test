@@ -2,13 +2,12 @@
 class Statement {
 
   constructor() {
-    var Account = require('../src/account');
-    this.account = new Account;
+    this.myStatement = []
   }
 
   printStatement() {
     console.log("date || credit || debit || balance");
-    this.account.myStatement.slice().reverse().forEach(line => { console.log(line); });
+    (this.myStatement).slice().reverse().forEach(line => { console.log(line); });
   }
 
 }
