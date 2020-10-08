@@ -96,7 +96,7 @@ accountName.withdraw(amount)
 ```
 To check a statement of your account:
 ```
-accountName.statement()
+accountName.statement.printStatement()
 ```
 ## Screenshot example
 

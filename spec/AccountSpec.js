@@ -1,6 +1,7 @@
 describe("Account", function() {
 
-  var Account = require('../src/Account');
+  
+  var Account = require('../src/account');
   var account;
 
   beforeEach(function() {
@@ -9,7 +10,7 @@ describe("Account", function() {
 
   it("Should return a statement with the headings, 'date', 'credit/debit' and 'balance' ", function() {
     console.log = jasmine.createSpy("log");
-    account.statement();
+    account.statement.printStatement();
     expect(console.log).toHaveBeenCalledWith("date || credit || debit || balance");
   });
 
@@ -17,7 +18,7 @@ describe("Account", function() {
     spyOn(Date, 'now').and.returnValue('5/10/2020')
     console.log = jasmine.createSpy("log");
     account.deposit(200)
-    account.statement();
+    account.statement.printStatement();
     expect(console.log).toHaveBeenCalledWith(`5/10/2020 || 200.00 || || 200.00`)
   });
 
@@ -26,7 +27,7 @@ describe("Account", function() {
     console.log = jasmine.createSpy("log");
     account.deposit(200)
     account.withdraw(50)
-    account.statement();
+    account.statement.printStatement();
     expect(console.log).toHaveBeenCalledWith(`5/10/2020 || || 50.00 || 150.00`)
   });
 
@@ -36,7 +37,7 @@ describe("Account", function() {
     account.deposit(400)
     account.withdraw(24)
     account.deposit(50)
-    account.statement();
+    account.statement.printStatement();
     expect(console.log).toHaveBeenCalledWith(`5/10/2020 || 400.00 || || 400.00`)
     expect(console.log).toHaveBeenCalledWith(`5/10/2020 || || 24.00 || 376.00`)
     expect(console.log).toHaveBeenCalledWith(`5/10/2020 || 50.00 || || 426.00`)
@@ -48,7 +49,7 @@ describe("Account", function() {
     account.deposit(400)
     account.withdraw(24)
     account.deposit(50)
-    account.statement();
+    account.statement.printStatement();
     expect(console.log).toHaveBeenCalledWith(`date || credit || debit || balance`);
     expect(console.log).toHaveBeenCalledWith(`5/10/2020 || 400.00 || || 400.00`);
     expect(console.log).toHaveBeenCalledWith(`5/10/2020 || || 24.00 || 376.00`);
@@ -59,7 +60,7 @@ describe("Account", function() {
     spyOn(Date, 'now').and.returnValue('5/10/2020')
     console.log = jasmine.createSpy("log");
     account.deposit(70)
-    account.statement();
+    account.statement.printStatement();
     expect(console.log).toHaveBeenCalledWith(`5/10/2020 || 70.00 || || 70.00`)
   });
 
