@@ -51,19 +51,19 @@ I want there to be dates for each transaction listed on my statement.
 
 I wanted my code to be simple to use and easy to read. 
 
-Therefore my code consists of 1 class with 4 methods, each of them no longer than 2 lines. 
+Therefore my code consists of 2 classes with a total of 4 methods, each of them no longer than 2 lines. 
 
 I believe that my code is dry and runs well.
 
-I struggled with mocking in Jasmine, but I managed to get it working and I'm proud of that fact.
+I struggled with mocking in Jasmine, but I managed to get it working and I'm proud of that fact. Getting test coverage setup with nyc jasmine was a bit tricky, but now I understand how it works I am confident that I could set it up quickly next time.
 
-I did however have trouble with installing a test coverage tool.
-
-I am still looking into how to do that in Javascript, hopefully that will be the next thing I add to this project. 
+I used a TDD process to write my code, I have a total of 5 tests,  with 100% test coverage.
 
 ## Installation
 
 To install the project:
+- Fork or Clone this repo
+
 ```
 npm install
 ```
