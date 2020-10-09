@@ -7,7 +7,13 @@ describe("Statement", function() {
      statement = new Statement();
   });
 
-  it("Added a transaction to the array which is then displayed correctly on print", function() {
+  it("Console logs the statement header", function() {
+    console.log = jasmine.createSpy("log");
+    statement.printStatement();
+    expect(console.log).toHaveBeenCalledWith("date || credit || debit || balance")
+  });
+
+  it("console logs the first line of the statement", function() {
     spyOn(Date, 'now').and.returnValue('5/10/2020');
     console.log = jasmine.createSpy("log");
     statement._addTransaction(' 100.00 ', " ", 100);
@@ -15,14 +21,7 @@ describe("Statement", function() {
     expect(console.log).toHaveBeenCalledWith('5/10/2020 || 100.00 || || 100.00')
   });
 
-  it("Console logs the statement header", function() {
-    console.log = jasmine.createSpy("log");
-    statement.printStatement();
-    console.log(console.log)
-    expect(console.log).toHaveBeenCalledWith("date || credit || debit || balance")
-  });
-
-  it("Is able to store various transactions in the statement", function() {
+  it("Is able to store various transactions in the statement and console log all of them", function() {
   spyOn(Date, 'now').and.returnValue('5/10/2020');
   console.log = jasmine.createSpy("log");
   statement._addTransaction(' 100.00 ', ' ', 100);
